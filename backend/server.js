@@ -1,10 +1,14 @@
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
+import connectDB from "./config/db.js";
 import products from "./data/products.js";
 
 // I want the backend running on 5000
 const port = process.env.PORT || 5000;
+
+// connect to MongoDB
+connectDB();
 
 // Initialize express
 const app = express();
